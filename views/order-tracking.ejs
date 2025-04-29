@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order Tracker | The Hungry Hipsters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      font-size: 16px;
+    }
+
+    body {
+      background-color: #f5dfc3;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .tracker-box {
+      background-color: #fff;
+      border: 4px solid #79973b;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #5c4033;
+    }
+
+    .stage {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 2px dashed #ccc;
+      transition: background-color 0.3s, border 0.3s;
+    }
+
+    .stage.active {
+      background-color: #e6f4e6;
+      border-color: #79973b;
+    }
+
+    .stage.completed {
+      background-color: #d6f5d6;
+      border-color: #4CAF50;
+      color: #4CAF50;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #ccc;
+      transition: background-color 0.3s;
+    }
+
+    .active .dot {
+      background-color: #79973b;
+    }
+
+    .completed .dot {
+      background-color: #4CAF50;
+    }
+
+    #status {
+      margin-top: 2rem;
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    @media (max-width: 500px) {
+      .stage {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tracker-box">
+    <h1>🍕 Tracking Your Order</h1>
+    <div class="stage" id="stage1"><div class="dot"></div> Preparing your order...</div>
+    <div class="stage" id="stage2"><div class="dot"></div> Packing your meal...</div>
+    <div class="stage" id="stage3"><div class="dot"></div> Out for delivery...</div>
+    <div class="stage" id="stage4"><div class="dot"></div> Delivered ✅</div>
+    <div id="status">Estimated delivery in: <strong>30 minutes</strong></div>
+  </div>
+
+  <script>
+    const stages = [
+      { id: "stage1", time: 0 },
+      { id: "stage2", time: 600000 },   // after 10 min
+      { id: "stage3", time: 900000 },   // after 15 min
+      { id: "stage4", time: 1800000 }   // after 30 min
+    ];
+
+    function updateStage(index) {
+      if (index > 0) {
+        document.getElementById(stages[index - 1].id).classList.remove("active");
+        document.getElementById(stages[index - 1].id).classList.add("completed");
+      }
+
+      if (index < stages.length) {
+        const current = document.getElementById(stages[index].id);
+        current.classList.add("active");
+        document.getElementById("status").textContent = `Stage: ${current.textContent.trim()}`;
+      }
+    }
+
+    stages.forEach((stage, index) => {
+      setTimeout(() => updateStage(index), stage.time);
+    });
+
+    setTimeout(() => {
+      document.getElementById("status").innerHTML = `<strong>🎉 Your order has been delivered! Enjoy your meal! 🎉</strong>`;
+    }, stages[3].time + 2000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            animation: fadeIn 0.5s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .quantity-btn {
+            background: #ff6f61;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-btn:hover {
+            background: #ff3b2f;
+        }
+
+        .remove-btn {
+            background: #eee;
+            color: #333;
+            padding: 5px 10px;
+            border: none;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-btn:hover {
+            background: #ccc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Your Cart 🛒</h1>
+    <div class="container">
+        <% if (cart.length > 0) { %>
+            <% let total = 0; %>
+            <% cart.forEach(item => { %>
+                <% total += dishes.price * dishes.quantity; %>
+                <div class="card">
+                    <img src="<%= dishes.image_url %>" alt="<%= dishes.title %>">
+                    <div class="card-content">
+                        <h3><%= dishes.title %></h3>
+                        <p>Price: ₹<%= dishes.price %></p>
+                        <div class="quantity-controls">
+                            <form method="POST" action="/update-cart/<%= dishes.id %>?action=decrease" style="display:inline;">
+                                <button class="quantity-btn">-</button>
+                            </form>
+                            <span><%= dishes.quantity %></span>
+                            <form method="POST" action="/update-cart/<%= dishes.id %>?action=increase" style="display:inline;">
+                                <button class="quantity-btn">+</button>
+                            </form>
+                        </div>
+                        <form method="GET" action="/remove-from-cart/<%= dishes.id %>">
+                            <button class="remove-btn">Remove</button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+            <div class="total">
+                <h3>Total: ₹<%= total %></h3>
+            </div>
+        <% } else { %>
+            <p>Your cart is empty.</p>
+        <% } %>
+    </div>
+    
+
+</body>
+
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= dishes.title %></title>
+</head>
+<body>
+    <h1><%= dishes.title %></h1>
+    <img src="<%= dishes.image_url %>" alt="<%= dishes.title %>" width="300px">
+    <p>Price: ₹<%= dishes.price %></p>
+    <p>Location: <%= dishes.location %></p>
+    <p>Description: <%= dishes.description || 'No description available.' %></p>
+</body>
+</html> -->

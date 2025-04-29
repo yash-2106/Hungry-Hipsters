@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+          font-size: 16px;
+        }
+    
+        body {
+          background-image: url('https://wallpapercave.com/wp/wp9764009.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          margin: 0;
+          padding: 1rem;
+        }
+    
+        .form-box {
+          background: rgba(211, 210, 209, 0.077);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-radius: 1rem;
+          border: 0.4375rem solid rgba(255, 255, 255, 0.18);
+          padding: 2.5rem;
+          width: 100%;
+          max-width: 22rem;
+          text-align: center;
+        }
+    
+        h2 {
+          font-weight: 900;
+          margin-bottom: 1.5rem;
+          color: #ffffff;
+          text-shadow: 1px 1px 2px #000000;
+          font-size: 2rem;
+        }
+    
+        input {
+          width: 100%;
+          padding: 0.75rem;
+          margin: 0.625rem 0;
+          border: none;
+          border-radius: 0.5rem;
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+          font-weight: bold;
+          font-size: 1rem;
+        }
+    
+        input::placeholder {
+          color: #eeeeee;
+        }
+    
+        input:focus {
+          outline: none;
+          border: 1px solid #4CAF50;
+          box-shadow: 0 0 5px #4CAF50;
+          background: rgba(255, 255, 255, 0.3);
+        }
+    
+        button {
+          background: linear-gradient(to right, #00c6ff, #0072ff);
+          color: white;
+          padding: 0.75rem;
+          border: none;
+          width: 100%;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          margin-top: 1.25rem;
+          font-weight: bold;
+          font-size: 1rem;
+          transition: transform 0.3s, box-shadow 0.3s;
+        }
+    
+        button:hover {
+          transform: scale(1.05);
+          box-shadow: 0px 0px 10px #00c6ff;
+        }
+    
+        p {
+          color: #eeeeee;
+          margin-top: 1rem;
+          font-size: 0.875rem;
+        }
+    
+        a {
+          color: #00f7ff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+    
+        a:hover {
+          text-decoration: underline;
+        }
+    
+        @media (max-width: 480px) {
+          :root {
+            font-size: 14px;
+          }
+    
+          h2 {
+            font-size: 1.5rem;
+          }
+    
+          input,
+          button {
+            font-size: 0.95rem;
+            padding: 0.7rem;
+          }
+    
+          .form-box {
+            padding: 2rem 1.5rem;
+          }
+        }
+      </style>
+</head>
+
+<body>
+
+    <div class="form-box">
+        <h2>LOGIN</h2>
+        <form method="POST" action="/Login">
+            <input type="text" name="username" placeholder="&#128100; Username" required>
+            <input type="password" name="password" placeholder="🔒 Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>New user? <a href="/Sign_Up">Sign Up</a></p>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You | The Hungry Hipsters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5dfc3, #fff8e1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .thankyou-container {
+      background-color: #fff;
+      border: 6px solid #79973b;
+      padding: 3rem 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: scaleIn 1s ease;
+    }
+
+    .thankyou-container h1 {
+      font-size: 2.5rem;
+      color: #5c4033;
+      margin-bottom: 1rem;
+    }
+
+    .thankyou-container p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .emoji {
+      font-size: 3rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 600px) {
+      .thankyou-container h1 {
+        font-size: 2rem;
+      }
+
+      .thankyou-container {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "/main";
+    }, 5000);
+  </script>
+</head>
+
+<body>
+  <div class="thankyou-container">
+    <div class="emoji">🍔</div>
+    <h1>Thank You!</h1>
+    <p>Your response has been recorded. Redirecting you to the menu...</p>
+  </div>
+</body>
+</html>
