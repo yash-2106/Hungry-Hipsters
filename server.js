@@ -6,7 +6,7 @@ const app = express();
 const mysql = require('mysql2');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 // parsing data
 app.use(express.urlencoded({ extended: true }));  // To parse form data
 app.use(express.json()); // To parse JSON data
